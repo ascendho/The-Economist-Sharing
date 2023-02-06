@@ -13,9 +13,7 @@ typora-copy-images-to: ./Img
 - 电脑端Edge浏览器可以安装[欧路词典](https://dict.eudic.net/)
 - 访问问题：对于访问Github和Github pages有困难的国内用户, 建议安装<a href="https://github.com/dotnetcore/FastGithub" target="_blank">fastGithub</a>, 也是Github上的一个开源项目
 
-
-
-### 介绍
+## 介绍
 
 该项目是受到本人长期以来阅读外刊、英文文档、浏览英文资讯等习惯而启发的，我也有一个私人仓库，
 
@@ -25,7 +23,7 @@ typora-copy-images-to: ./Img
 
 
 
-### 文件说明
+## 文件说明
 
 **articles：** 包含pdf版本的文章，翻译采用[DeepL Translate](https://www.deepl.com/translator)或者[有道翻译](https://fanyi.youdao.com/index.html#/)，本人不对翻译的内容负责
 
@@ -33,7 +31,7 @@ typora-copy-images-to: ./Img
 
 
 
-### 个人使用方法分享
+## 个人使用方法分享
 
 本人采用如下工具和流程阅读文章
 
@@ -47,13 +45,13 @@ typora-copy-images-to: ./Img
 
 
 
-### 文章主题
+##　文章主题
 
 范围大概在科学与科技、商业、文化、经济等与考研英语高度相关的主题
 
 
 
-### 更新说明
+## 更新说明
 
 正常情况，每两天更新一篇，但春节期间，可能受走亲访友等影响，更新时间会受影响
 

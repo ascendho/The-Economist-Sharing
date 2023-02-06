@@ -8,20 +8,20 @@ typora-copy-images-to: ./Img
 
 English ｜ [中文(简体)](README-CN.md)
 
-### Background
+## Background
 
-The idea of this repo is from my long-standing reading habits of <a href="" target="_blank">The Economist </a>articles, and the reason why I Initiate this project, on the one hand, I want to archive every article I read, on the other hand, it will push me to continue reading magazines
+The idea of this repo is from my long-standing reading habits of <a href="https://www.economist.com/" target="_blank">The Economist </a>articles, and the reason why I Initiate this project, on the one hand, I want to archive every article I read, on the other hand, it will push me to continue reading magazines
 
 
 
-### Website
+## Website
 
 - I build a website using Github pages for this project, You could view <a href="https://ascendho.github.io/The-Economist-Sharing/entry/entry.html" target="_blank">here</a>
 - Preview:![image-20230206194148345](Img/image-20230206194148345.png)
 
 
 
-### Folder clarification
+## Folder clarification
 
 **articles**: including pdf version article with Chinese translation
 
@@ -31,13 +31,29 @@ The idea of this repo is from my long-standing reading habits of <a href="" targ
 
 
 
-### Article theme
+## Article theme
 
 Mostly, I select articles within the theme of **Science & technology**、**Business**、**Culture** and **Economy**
 
 
 
-### Update
+##　Update
 
 Normally, I update this project every 2 days, it means that I usually read 1 article every 2 days
 
+
+
+## LICENSE
+
+- This repo is under MIT LICENSE
+- For any materials involved in this repo, if you feel you have been infringed, please just [email](mailto:ascendho@outlook.com) me
+
+
+
+## Acknowledgements
+
+The color、icons、images of this project are from:
+
+- <a href="https://yeun.github.io/open-color/">Open Color</a>
+- <a href="https://ionic.io/ionicons">Ionicons</a>、<a href="https://heroicons.com/">Hero Icons</a>
+- <a href="https://unsplash.com/">Unsplash</a>、<a href="https://www.pexels.com/">Pexels</a>
