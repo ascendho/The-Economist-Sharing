@@ -37,7 +37,7 @@ Mostly, I select articles within the theme of **Science & technology**、**Busin
 
 
 
-##　Update
+## Update
 
 Normally, I update this project every 2 days, it means that I usually read 1 article every 2 days
 
