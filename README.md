@@ -39,7 +39,7 @@ Mostly, I select articles within the theme of **Science & technology**、**Busin
 
 ## Update
 
-Normally, I update this project every 2 days, it means that I usually read 1 article every 2 days
+Normally, I read 1 article every 2 days，it means that I update this project every 2 days
 
 
 
@@ -52,7 +52,9 @@ Normally, I update this project every 2 days, it means that I usually read 1 art
 
 ## Acknowledgements
 
-The color、icons、images of this project are from:
+The font-family、color、icons、images of this project are from:
+
+- <a href="https://www.google.com/fonts">Google Fonts</a>
 
 - <a href="https://yeun.github.io/open-color/">Open Color</a>
 - <a href="https://ionic.io/ionicons">Ionicons</a>、<a href="https://heroicons.com/">Hero Icons</a>
