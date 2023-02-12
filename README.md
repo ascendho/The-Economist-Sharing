@@ -45,7 +45,7 @@ Normally, I read 1 article every 2 days，it means that I update this project ev
 
 ## LICENSE
 
-- This repo is under MIT LICENSE
+- This repo is under <a href="https://github.com/ascendho/The-Economist-Sharing/blob/master/LICENSE">MIT LICENSE</a>
 - For any materials involved in this repo, if you feel you have been infringed, please just [email](mailto:ascendho@outlook.com) me
 
 
@@ -57,5 +57,5 @@ The font-family、color、icons、images of this project are from:
 - <a href="https://www.google.com/fonts">Google Fonts</a>
 
 - <a href="https://yeun.github.io/open-color/">Open Color</a>
-- <a href="https://ionic.io/ionicons">Ionicons</a>、<a href="https://heroicons.com/">Hero Icons</a>
+- <a href="https://ionic.io/ionicons">Ionicons</a>、<a href="https://heroicons.com/">Hero Icons</a>、<a href="https://www.iconfinder.com/">iconfinder</a>
 - <a href="https://unsplash.com/">Unsplash</a>、<a href="https://www.pexels.com/">Pexels</a>

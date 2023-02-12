@@ -12,6 +12,8 @@ const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
 
 
+// console.log(document.querySelector('.player-container').textContent);
+// console.log(document.querySelector('.player-container').innerHTML);
 // Music
 const songs = [
     {
@@ -82,29 +84,38 @@ function nextSong() {
 // On Load - Select First Song
 loadSong(songs[songIndex]);
 
+// calculate time
+function calculate(time) {
+    return [Math.floor(time / 60), `${Math.floor(time % 60)}`.padStart(2, '0')];
+}
+
 // Update Progress Bar & Time
 function updateProgressBar(e) {
     if (isPlaying) {
-        const {duration, currentTime} = e.srcElement;
+        const {duration, currentTime} = e.target;
         // Update progress bar width
         const progressPercent = (currentTime / duration) * 100;
         progress.style.width = `${progressPercent}%`;
         // Calculate display for duration
-        const durationMinutes = Math.floor(duration / 60);
-        let durationSeconds = Math.floor(duration % 60);
-        if (durationSeconds < 10) {
-            durationSeconds = `0${durationSeconds}`;
-        }
+        const [durationMinutes, durationSeconds] = calculate(duration, currentTime);
+
+        // const durationMinutes = Math.floor(duration / 60);
+        // const durationSeconds = `${Math.floor(duration % 60)}`.padStart(2, '0');
+        // if (durationSeconds < 10) {
+        //     durationSeconds = `0${durationSeconds}`;
+        // }
         // Delay switching duration Element to avoid NaN
-        if (durationSeconds) {
+        if (durationMinutes) {
             durationEl.textContent = `${durationMinutes}:${durationSeconds}`;
         }
         // Calculate display for currentTime
-        const currentMinutes = Math.floor(currentTime / 60);
-        let currentSeconds = Math.floor(currentTime % 60);
-        if (currentSeconds < 10) {
-            currentSeconds = `0${currentSeconds}`;
-        }
+        const [currentMinutes, currentSeconds] = calculate(currentTime);
+
+        // const currentMinutes = Math.floor(currentTime / 60);
+        // const currentSeconds = `${Math.floor(currentTime % 60)}`.padStart(2, '0');
+        // if (currentSeconds < 10) {
+        //     currentSeconds = `0${currentSeconds}`;
+        // }
         currentTimeEl.textContent = `${currentMinutes}:${currentSeconds}`;
     }
 }
@@ -115,6 +126,8 @@ function setProgressBar(e) {
     const clickX = e.offsetX;
     const {duration} = music;
     music.currentTime = (clickX / width) * duration;
+    if (!isPlaying)
+        playSong();
 }
 
 // Event Listeners

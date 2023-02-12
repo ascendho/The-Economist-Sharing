@@ -8,7 +8,7 @@ typora-copy-images-to: ./Img
 **注：** 
 
 - 你可以在线阅读该<a href="https://ascendho.github.io/The-Economist-Sharing/entry/entry.html" target="_blank">项目</a>
-- 预览：![image-20230206194148345](image-20230206194148345.png)
+- 预览：![image-20230206194148345](Img/image-20230206194148345.png)
 
 - 电脑端Edge浏览器可以安装[欧路词典](https://dict.eudic.net/)
 - 访问问题：对于访问Github和Github pages有困难的国内用户, 建议安装<a href="https://github.com/dotnetcore/FastGithub" target="_blank">fastGithub</a>, 也是Github上的一个开源项目
