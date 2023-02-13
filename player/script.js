@@ -11,9 +11,12 @@ const prevBtn = document.getElementById('prev');
 const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
 
+// Check if Playing
+let isPlaying = false;
 
 // console.log(document.querySelector('.player-container').textContent);
 // console.log(document.querySelector('.player-container').innerHTML);
+
 // Music
 const songs = [
     {
@@ -27,9 +30,6 @@ const songs = [
         artist: 'The Economist',
     },
 ];
-
-// Check if Playing
-let isPlaying = false;
 
 // Play
 function playSong() {
@@ -46,9 +46,6 @@ function pauseSong() {
     playBtn.setAttribute('title', 'Play');
     music.pause();
 }
-
-// Play or Pause Event Listener
-playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
 
 // Update DOM
 function loadSong(song) {
@@ -122,13 +119,19 @@ function updateProgressBar(e) {
 
 // Set Progress Bar
 function setProgressBar(e) {
+    // console.log(e);
+    // console.log(this===e.target)
     const width = this.clientWidth;
     const clickX = e.offsetX;
     const {duration} = music;
     music.currentTime = (clickX / width) * duration;
-    if (!isPlaying)
-        playSong();
+    !isPlaying && playSong();
+    // if (!isPlaying)
+    //     playSong();
 }
+
+// Play or Pause Event Listener
+playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
 
 // Event Listeners
 prevBtn.addEventListener('click', prevSong);
