@@ -20,6 +20,17 @@ let isPlaying = false;
 // Music
 const songs = [
     {
+        name: '20230119',
+        displayName: '20230119',
+        artist: 'The Economist',
+    },
+
+    {
+        name: '20230203',
+        displayName: '20230203',
+        artist: 'The Economist',
+    },
+    {
         name: '20230207',
         displayName: '20230207',
         artist: 'The Economist',
@@ -29,6 +40,11 @@ const songs = [
         displayName: '20230210',
         artist: 'The Economist',
     },
+    {
+        name: '20230214',
+        displayName: '20230214',
+        artist: 'The Economist',
+    }
 ];
 
 // Play
@@ -53,10 +69,15 @@ function loadSong(song) {
     artist.textContent = song.artist;
     music.src = `../audios/${song.name}.mp3`;
     image.src = `../audios/cover/${song.name}.jpg`;
+    playSong();
 }
 
+const songName = (new URLSearchParams(location.search)).get('name')
 // Current Song
-let songIndex = 0;
+let songIndex = songs.findIndex(s => s.name === songName);
+if (songIndex < 0) {
+    songIndex = 0
+}
 
 // Previous Song
 function prevSong() {
@@ -130,10 +151,9 @@ function setProgressBar(e) {
     //     playSong();
 }
 
-// Play or Pause Event Listener
-playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
 
 // Event Listeners
+playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 music.addEventListener('ended', nextSong);
