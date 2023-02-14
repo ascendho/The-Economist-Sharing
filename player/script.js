@@ -54,9 +54,12 @@ function loadSong(song) {
     music.src = `../audios/${song.name}.mp3`;
     image.src = `../audios/cover/${song.name}.jpg`;
 }
-
+const songName = (new URLSearchParams(location.search)).get('name')
 // Current Song
-let songIndex = 0;
+let songIndex = songs.findIndex(s=>s.name==songName);
+if(songIndex<0){
+    songIndex=0
+}
 
 // Previous Song
 function prevSong() {
