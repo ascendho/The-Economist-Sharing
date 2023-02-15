@@ -16,8 +16,8 @@ The idea of this repo is from my long-standing reading habits of <a href="https:
 
 ## Website
 
-- I build a website using Github pages for this project, You could view <a href="https://ascendho.github.io/The-Economist-Sharing/entry/entry.html" target="_blank">here</a>
-- Preview:![image-20230206194148345](Img/image-20230206194148345.png)
+- I build a website using Github pages for this project, You could view <a href="https://ascendho.github.io/The-Economist-Sharing/src/entry/entry.html" target="_blank">here</a>
+- Preview:![image-20230206194148345](img/image-20230206194148345.png)
 
 
 
@@ -47,6 +47,7 @@ Normally, I read 1 article every 2 days，it means that I update this project ev
 
 - This repo is under <a href="https://github.com/ascendho/The-Economist-Sharing/blob/master/LICENSE">MIT LICENSE</a>
 - For any materials involved in this repo, if you feel you have been infringed, please just [email](mailto:ascendho@outlook.com) me
+- The articles and audios are just for self-reading and learning, commercial activities are **forbidden**
 
 
 

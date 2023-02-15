@@ -7,8 +7,8 @@ typora-copy-images-to: ./Img
 
 **注：** 
 
-- 你可以在线阅读该<a href="https://ascendho.github.io/The-Economist-Sharing/entry/entry.html" target="_blank">项目</a>
-- 预览：![image-20230206194148345](Img/image-20230206194148345.png)
+- 你可以在线阅读该<a href="https://ascendho.github.io/The-Economist-Sharing/src/entry/entry.html" target="_blank">项目</a>
+- 预览：![image-20230206194148345](img/image-20230206194148345.png)
 
 - 电脑端Edge浏览器可以安装[欧路词典](https://dict.eudic.net/)
 - 访问问题：对于访问Github和Github pages有困难的国内用户, 建议安装<a href="https://github.com/dotnetcore/FastGithub" target="_blank">fastGithub</a>, 也是Github上的一个开源项目
@@ -17,7 +17,7 @@ typora-copy-images-to: ./Img
 
 该项目是受到本人长期以来阅读外刊、英文文档、浏览英文资讯等习惯而启发的，我也有一个私人仓库，
 
-![image-20230119213553585](Img/image-20230119213553585.png)
+![image-20230119213553585](img/image-20230119213553585.png)
 
 每次阅读后都会上传留作记录。现在放寒假在家，同时也在准备2024的考研，然后在浏览中文互联网的时候，发现很多朋友找不到资源，或者没有意识到长期阅读外刊对英文阅读水平能力提升的益处，所以独乐乐不如众乐乐，今天重新建立一个公共仓库，供有需要的同学学习。
 
@@ -47,15 +47,13 @@ typora-copy-images-to: ./Img
 
 ##　文章主题
 
-范围大概在科学与科技、商业、文化、经济等与考研英语高度相关的主题
+范围大概在**科学与科技**、**商业**、**文化**、**经济**等与考研英语高度相关的主题
 
 
 
 ## 更新说明
 
-正常情况，每两天更新一篇，但春节期间，可能受走亲访友等影响，更新时间会受影响
-
-
+正常情况，每两天更新一篇
 
 
 
