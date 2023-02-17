@@ -10,6 +10,9 @@ const progressContainer = document.getElementById('progress-container');
 const prevBtn = document.getElementById('prev');
 const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
+
+const songName = (new URLSearchParams(location.search)).get('name');
+let songIndex = -1;
 // Check if Playing
 let isPlaying = false;
 
@@ -75,7 +78,6 @@ function loadSong(song) {
     image.src = `../../audios/cover/${song.name}.jpg`;
 }
 
-
 // Previous Song
 function prevSong() {
     songIndex--;
@@ -96,9 +98,6 @@ function nextSong() {
     playSong();
 }
 
-const songName = (new URLSearchParams(location.search)).get('name')
-let songIndex = songs.findIndex(s => s.name === songName);
-songIndex >= 0 && loadSong(songs[songIndex]);
 // console.log(location.search);
 // console.log(new URLSearchParams(location.search));
 // console.log(songName);
@@ -162,6 +161,20 @@ function setProgressBar(e) {
     //     playSong();
 }
 
+function initial() {
+    songIndex = songs.findIndex(s => s.name === songName);
+    if (songIndex >= 0) {
+        loadSong(songs[songIndex]);
+        playSong();
+    } else {
+        songIndex = 0;
+        loadSong(songs[songIndex]);
+        currentTimeEl.textContent = '';
+        durationEl.textContent = '';
+    }
+}
+
+initial();
 
 // Event Listeners
 playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
