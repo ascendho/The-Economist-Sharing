@@ -10,7 +10,6 @@ const progressContainer = document.getElementById('progress-container');
 const prevBtn = document.getElementById('prev');
 const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
-
 // Check if Playing
 let isPlaying = false;
 
@@ -74,15 +73,8 @@ function loadSong(song) {
     artist.textContent = song.artist;
     music.src = `../../audios/${song.name}.mp3`;
     image.src = `../../audios/cover/${song.name}.jpg`;
-    playSong();
 }
 
-const songName = (new URLSearchParams(location.search)).get('name')
-// Current Song
-let songIndex = songs.findIndex(s => s.name === songName);
-if (songIndex < 0) {
-    songIndex = 0
-}
 
 // Previous Song
 function prevSong() {
@@ -104,8 +96,19 @@ function nextSong() {
     playSong();
 }
 
+const songName = (new URLSearchParams(location.search)).get('name')
+let songIndex = songs.findIndex(s => s.name === songName);
+songIndex >= 0 && loadSong(songs[songIndex]);
+// console.log(location.search);
+// console.log(new URLSearchParams(location.search));
+// console.log(songName);
+// Current Song
+// if (songIndex < 0) {
+//     songIndex = 0
+// }
+// console.log(songIndex);
+
 // On Load - Select First Song
-loadSong(songs[songIndex]);
 
 // calculate time
 function calculate(time) {
@@ -114,6 +117,7 @@ function calculate(time) {
 
 // Update Progress Bar & Time
 function updateProgressBar(e) {
+    // console.log("invoked!");
     if (isPlaying) {
         const {duration, currentTime} = e.target;
         // Update progress bar width
@@ -145,6 +149,8 @@ function updateProgressBar(e) {
 
 // Set Progress Bar
 function setProgressBar(e) {
+    // console.log('invoked!');
+
     // console.log(e);
     // console.log(this===e.target)
     const width = this.clientWidth;

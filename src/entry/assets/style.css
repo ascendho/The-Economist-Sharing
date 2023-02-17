@@ -73,7 +73,7 @@ tbody tr:nth-child(even) {
     cursor: pointer;
 }
 
-.theme {
+.theme,.topic {
     color: #c92a2a;
     font-family: "Times New Roman", serif;
     font-size: 20px;
