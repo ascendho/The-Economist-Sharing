@@ -55,6 +55,11 @@ const songs = [
         displayName: '20230216',
         artist: 'The Economist',
     },
+    {
+        name: '20230218',
+        displayName: '20230218',
+        artist: 'The Economist',
+    },
 ];
 
 // Play
@@ -165,6 +170,7 @@ function setProgressBar(e) {
 }
 
 function showList() {
+    //toggle between opened and unopened
     let count = 0, maxCount = 4;
     let page = 0;
     listModal.classList.remove('hidden');
