@@ -46,6 +46,8 @@ Normally, I read 1 article every 2 days，it means that I update this project ev
 
 ## LICENSE
 
+Before you participate in this project, You should follow these rules:
+
 - The source code of this repo is under <a href="https://github.com/ascendho/The-Economist-Sharing/blob/master/LICENSE">MIT LICENSE</a>
 - For any materials involved in this repo, if you feel you have been infringed, please just [email](mailto:ascendho@outlook.com) me
 - The articles and audios are just for self-reading and learning, commercial activities are **forbidden**
