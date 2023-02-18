@@ -20,8 +20,8 @@ body {
     font-family: "Inter", sans-serif;
     color: #343a40;
     line-height: 1;
-    display: flex;
-    justify-content: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
 }
 
 /*.headline{*/
@@ -32,8 +32,8 @@ body {
 table {
     width: 800px;
     /*background-color: red;*/
-    /*margin: 100px auto 0;*/
-    margin-top: 100px;
+    margin: 70px auto 0;
+    /*margin-top: 70px;*/
     font-size: 18px;
     /*border: 1px solid #343a40;*/
     border-collapse: collapse;
@@ -73,26 +73,15 @@ tbody tr:nth-child(even) {
     cursor: pointer;
 }
 
-.theme,.topic {
-    color: #c92a2a;
+.theme, .topic {
+    color: #dc2626;
     font-family: "Times New Roman", serif;
     font-size: 20px;
 }
 
-
-/*.audio {*/
-/*font-family: 'Open Sans', sans-serif;*/
-/*font-family: 'IBM Plex Mono', monospace;*/
-/*font-family: 'IBM Plex Sans', sans-serif;*/
-/*font-family: 'IBM Plex Sans Condensed', sans-serif;*/
-/*font-family: 'IBM Plex Serif', serif;*/
-/*font-family: 'Open Sans', sans-serif;*/
-/*font-family: 'Roboto', sans-serif;*/
-/*}*/
-
-/*a {*/
-/*color: red;*/
-/*}*/
+.topic {
+    color: #111827;
+}
 
 a:link {
     text-decoration: none;
@@ -101,7 +90,6 @@ a:link {
 a:hover {
     text-decoration: underline #2f9e44 5px;
     cursor: pointer;
-
 }
 
 .playerIcon:hover {
@@ -109,12 +97,20 @@ a:hover {
     border-radius: 100%;
     cursor: pointer;
     /*filter: drop-shadow(16px 16px 10px green)*/
-
 }
 
 
-/*footer{*/
-/*    margin-top: 200px;*/
-/*    text-align: center;*/
-/*    font-family: "Times New Roman";*/
-/*}*/
+footer {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    /*flex-direction: row;*/
+    /*align-items:stretch;*/
+    text-align: center;
+    font-family: "Times New Roman", sans-serif;
+    font-size: 20px;
+
+    /*position: absolute;*/
+    /*bottom: 20px;*/
+    /*right: 43%;*/
+    /*text-align: center;*/
+}

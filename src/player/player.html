@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Music Player</title>
     <link rel="icon" type="image/png" href="../../img/video-and-audio.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>-->
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>-->
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -25,8 +27,15 @@
             <span id="duration">calculating...</span>
         </div>
     </div>
+
+    <div class="listModal hidden">
+        <div class="listset">
+        </div>
+    </div>
+
     <!-- Controls -->
     <div class="player-controls">
+        <i class="fas fa-solid fa-list" id="list" title="Playlist"></i>
         <i class="fas fa-backward" id="prev" title="Previous"></i>
         <i class="fas fa-play main-button" id="play" title="Play"></i>
         <i class="fas fa-forward" id="next" title="Next"></i>
@@ -35,6 +44,7 @@
 <!-- Script -->
 
 <script src="assets/script.js"></script>
+<script src="https://kit.fontawesome.com/7d36701f47.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

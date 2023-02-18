@@ -17,9 +17,10 @@ The idea of this repo is from my long-standing reading habits of <a href="https:
 ## Website
 
 - I build a website using Github pages for this project, You could view <a href="https://ascendho.github.io/The-Economist-Sharing/src/entry/entry.html" target="_blank">here</a>
-- Preview:![image-20230206194148345](img/image-20230206194148345.png)
 
+- Preview:![image-20230218151925743](Img/image-20230218151925743.png)
 
+  
 
 ## Folder clarification
 
@@ -45,7 +46,7 @@ Normally, I read 1 article every 2 days，it means that I update this project ev
 
 ## LICENSE
 
-- This repo is under <a href="https://github.com/ascendho/The-Economist-Sharing/blob/master/LICENSE">MIT LICENSE</a>
+- The source code of this repo is under <a href="https://github.com/ascendho/The-Economist-Sharing/blob/master/LICENSE">MIT LICENSE</a>
 - For any materials involved in this repo, if you feel you have been infringed, please just [email](mailto:ascendho@outlook.com) me
 - The articles and audios are just for self-reading and learning, commercial activities are **forbidden**
 
@@ -57,6 +58,6 @@ The font-family、color、icons、images of this project are from:
 
 - <a href="https://www.google.com/fonts">Google Fonts</a>
 
-- <a href="https://yeun.github.io/open-color/">Open Color</a>
+- <a href="https://yeun.github.io/open-color/">Open Color</a>、<a href="https://tailwindcss.com/">tailwindcss</a>
 - <a href="https://ionic.io/ionicons">Ionicons</a>、<a href="https://heroicons.com/">Hero Icons</a>、<a href="https://www.iconfinder.com/">iconfinder</a>
 - <a href="https://unsplash.com/">Unsplash</a>、<a href="https://www.pexels.com/">Pexels</a>

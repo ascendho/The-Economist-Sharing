@@ -10,8 +10,11 @@ const progressContainer = document.getElementById('progress-container');
 const prevBtn = document.getElementById('prev');
 const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
-
-const songName = (new URLSearchParams(location.search)).get('name');
+const listBtn = document.getElementById('list');
+let playList = document.querySelectorAll('.listset');
+const listModal = document.querySelector('.listModal');
+console.log(playList[0]);
+let songName = (new URLSearchParams(location.search)).get('name');
 let songIndex = -1;
 // Check if Playing
 let isPlaying = false;
@@ -161,6 +164,31 @@ function setProgressBar(e) {
     //     playSong();
 }
 
+function showList() {
+    let count = 0, maxCount = 4;
+    let page = 0;
+    listModal.classList.remove('hidden');
+    songs.forEach(song => {
+        let html = '';
+        if (songs[songIndex].displayName === song.displayName)
+            html = `<p class="audio curplaying">${song.displayName}.mp3</p>`;
+        else
+            html = `<p class="audio">${song.displayName}.mp3</p>`;
+        playList[page].insertAdjacentHTML('beforeend', html);
+        count++;
+        if (count === maxCount) {
+            playList[page].insertAdjacentHTML('afterend', '<div class="listset hidden"></div>');
+            playList = document.querySelectorAll('.listset');
+            page++;
+            console.log(playList);
+            count = 0;
+        }
+
+    });
+
+}
+
+
 function initial() {
     songIndex = songs.findIndex(s => s.name === songName);
     if (songIndex >= 0) {
@@ -180,6 +208,7 @@ initial();
 playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
+// listBtn.addEventListener('click', showList);
 music.addEventListener('ended', nextSong);
 music.addEventListener('timeupdate', updateProgressBar);
 progressContainer.addEventListener('click', setProgressBar);
