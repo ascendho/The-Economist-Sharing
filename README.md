@@ -40,7 +40,7 @@ Mostly, I select articles within the theme of **Science & technology**、**Busin
 
 ## Update
 
-Normally, I read 1 article every 2 days，it means that I update this project every 2 days
+Normally, I read 1 article every 2 days, it means that I update this project every 2 days
 
 
 

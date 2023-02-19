@@ -99,6 +99,48 @@ a:hover {
     /*filter: drop-shadow(16px 16px 10px green)*/
 }
 
+.arrowBox{
+    /*display: block;*/
+    /*margin: 40px auto 0;*/
+    /*text-align: center;*/
+}
+.left{
+    position: relative;
+    top: 20px;
+    left: 600px;
+
+}
+
+
+.right{
+    position: relative;
+
+    top: 20px;
+    left: 700px;
+}
+.arrow{
+    --color-primary: #5ec576;
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    height: 4.5rem;
+    width: 4.5rem;
+    font-size: 2.25rem;
+    cursor: pointer;
+    margin-top: 30px;
+    /*margin-right: 500px;*/
+    transform: translate(50%, -50%);
+}
+
+.arrow:hover{
+    cursor: pointer;
+}
+
+.page{
+    display: inline-block;
+    font-family: Serif;
+    font-size: 32px;
+}
 
 footer {
     margin-top: 70px;

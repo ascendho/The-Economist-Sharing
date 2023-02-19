@@ -13,54 +13,15 @@ const nextBtn = document.getElementById('next');
 const listBtn = document.getElementById('list');
 let playList = document.querySelectorAll('.listset');
 const listModal = document.querySelector('.listModal');
-console.log(playList[0]);
-let songName = (new URLSearchParams(location.search)).get('name');
-let songIndex = -1;
+
+let songs = '';
+const artistVal = 'The Economist';
+
 // Check if Playing
 let isPlaying = false;
 
-// console.log(document.querySelector('.player-container').textContent);
-// console.log(document.querySelector('.player-container').innerHTML);
-
-// Music
-const songs = [
-    {
-        name: '20230119',
-        displayName: '20230119',
-        artist: 'The Economist',
-    },
-
-    {
-        name: '20230203',
-        displayName: '20230203',
-        artist: 'The Economist',
-    },
-    {
-        name: '20230207',
-        displayName: '20230207',
-        artist: 'The Economist',
-    },
-    {
-        name: '20230210',
-        displayName: '20230210',
-        artist: 'The Economist',
-    },
-    {
-        name: '20230214',
-        displayName: '20230214',
-        artist: 'The Economist',
-    },
-    {
-        name: '20230216',
-        displayName: '20230216',
-        artist: 'The Economist',
-    },
-    {
-        name: '20230218',
-        displayName: '20230218',
-        artist: 'The Economist',
-    },
-];
+let songName = (new URLSearchParams(location.search)).get('name');
+let songIndex = -1;
 
 // Play
 function playSong() {
@@ -81,7 +42,7 @@ function pauseSong() {
 // Update DOM
 function loadSong(song) {
     title.textContent = song.displayName;
-    artist.textContent = song.artist;
+    artist.textContent = artistVal;
     music.src = `../../audios/${song.name}.mp3`;
     image.src = `../../audios/cover/${song.name}.jpg`;
 }
@@ -105,17 +66,6 @@ function nextSong() {
     loadSong(songs[songIndex]);
     playSong();
 }
-
-// console.log(location.search);
-// console.log(new URLSearchParams(location.search));
-// console.log(songName);
-// Current Song
-// if (songIndex < 0) {
-//     songIndex = 0
-// }
-// console.log(songIndex);
-
-// On Load - Select First Song
 
 // calculate time
 function calculate(time) {
@@ -194,8 +144,20 @@ function showList() {
 
 }
 
+async function accessData() {
+    const res = await fetch('https://ebvvkimmpybapqtxypfm.supabase.co/rest/v1/Songs', {
+        headers: {
+            apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVidnZraW1tcHliYXBxdHh5cGZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY3OTQ3MjYsImV4cCI6MTk5MjM3MDcyNn0.LZ87nhdYaIe7xlHJWgcM3-XIcskshwNtIF1ldkYAM_I',
+            authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVidnZraW1tcHliYXBxdHh5cGZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY3OTQ3MjYsImV4cCI6MTk5MjM3MDcyNn0.LZ87nhdYaIe7xlHJWgcM3-XIcskshwNtIF1ldkYAM_I',
 
-function initial() {
+        }
+    });
+    songs = await res.json();
+}
+
+async function initialSetup() {
+    await accessData();
+
     songIndex = songs.findIndex(s => s.name === songName);
     if (songIndex >= 0) {
         loadSong(songs[songIndex]);
@@ -208,7 +170,7 @@ function initial() {
     }
 }
 
-initial();
+initialSetup();
 
 // Event Listeners
 playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
@@ -218,3 +180,42 @@ nextBtn.addEventListener('click', nextSong);
 music.addEventListener('ended', nextSong);
 music.addEventListener('timeupdate', updateProgressBar);
 progressContainer.addEventListener('click', setProgressBar);
+
+
+// Music
+// const songs = [
+//     {
+//         name: '20230119',
+//         displayName: '20230119',
+//     },
+//
+//     {
+//         name: '20230203',
+//         displayName: '20230203',
+//     },
+//     {
+//         name: '20230207',
+//         displayName: '20230207',
+//     },
+//     {
+//         name: '20230210',
+//         displayName: '20230210',
+//     },
+//     {
+//         name: '20230214',
+//         displayName: '20230214',
+//     },
+//     {
+//         name: '20230216',
+//         displayName: '20230216',
+//     },
+//     {
+//         name: '20230218',
+//         displayName: '20230218',
+//     },
+//
+//     {
+//         name: '20230219',
+//         displayName: '20230219',
+//     },
+// ];
