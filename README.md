@@ -8,6 +8,12 @@ typora-copy-images-to: ./img
 
 English ｜ [中文(简体)](README-CN.md)
 
+## 📣News
+
+I have deployed this site on <a href="https://www.netlify.com/">Netlifly</a>, another great free page-hosted service, cause there maybe some problems for domesitic users to get access to Github.
+
+
+
 ## Background
 
 The idea of this repo is from my long-standing reading habits of <a href="https://www.economist.com/" target="_blank">The Economist </a>articles, and the reason why I Initiate this project, on the one hand, I want to archive every article I read, on the other hand, it will push me to continue reading magazines
@@ -16,7 +22,7 @@ The idea of this repo is from my long-standing reading habits of <a href="https:
 
 ## Website
 
-- I build a website using Github pages for this project, You could view <a href="https://ascendho.github.io/The-Economist-Sharing/src/entry/entry.html" target="_blank">here</a>
+- I build a website using Github pages for this project, You could view <a href="https://2day1.netlify.app/src/entry/entry.html" target="_blank">here</a>
 
 - Preview:![image-20230218151925743](img/image-20230218151925743.png)
 

@@ -5,9 +5,13 @@ typora-copy-images-to: ./img
 # The Economist Sharing Project
 中文 ｜ [English](README.md)
 
+
+
+
+
 **注：** 
 
-- 你可以在线阅读该<a href="https://ascendho.github.io/The-Economist-Sharing/src/entry/entry.html" target="_blank">项目</a>
+- 你可以在线阅读该<a href="https://2day1.netlify.app/src/entry/entry.html" target="_blank">项目</a>
 - 预览：![image-20230218151925743](img/image-20230218151925743.png)
 
 - 电脑端Edge浏览器可以安装[欧路词典](https://dict.eudic.net/)
