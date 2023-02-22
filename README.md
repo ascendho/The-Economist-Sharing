@@ -10,7 +10,11 @@ English ｜ [中文(简体)](README-CN.md)
 
 ## 📣News
 
-I have deployed this site on <a href="https://www.netlify.com/">Netlifly</a>, another great free page-hosted service, cause there maybe some problems for domesitic users to get access to Github.
+I have deployed this site on <a href="https://www.netlify.com/">Netlify</a>, another great free page-hosted service, cause there maybe some problems for domesitic users to get access to Github
+
+- **Netlify：**<a href="https://2day1.netlify.app/" target="_blank">2day1</a>
+
+- **GitHub Pages:** <a href="https://ascendho.github.io/The-Economist-Sharing/" target="_blank">2DAY1</a>
 
 
 
