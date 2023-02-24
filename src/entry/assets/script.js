@@ -1,6 +1,17 @@
 'use strict';
 
+import {createClient} from 'https://esm.sh/@supabase/supabase-js@2';
+const supabase = createClient('https://ebvvkimmpybapqtxypfm.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVidnZraW1tcHliYXBxdHh5cGZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY3OTQ3MjYsImV4cCI6MTk5MjM3MDcyNn0.LZ87nhdYaIe7xlHJWgcM3-XIcskshwNtIF1ldkYAM_I')
 
+async function getData() {
+    let query = supabase.from('articleInfo').select('*');
+
+    let {data: articleInfo, error} = await query.order('id', {ascending: true});
+    console.log('articleInfo:', articleInfo);
+
+}
+
+getData();
 
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
@@ -39,15 +50,16 @@ async function accessInfo() {
     names = fieldVal.map(val => val.displayName);
     ids = fieldVal.map(val => val.id);
 
-    console.log(themes)
-    console.log(topics)
-    console.log(names)
-    console.log(ids);
-    console.log(fieldVal);
+    // console.log(themes)
+    // console.log(topics)
+    // console.log(names)
+    // console.log(ids);
+    // console.log(fieldVal);
 }
 
 accessInfo();
-console.log(fieldVal);
+
+// console.log(fieldVal);
 
 async function initialSetup() {
     await accessInfo();
@@ -62,7 +74,6 @@ function assignValue(fields, type = 'theme') {
         field.textContent = fieldVal;
     })
 }
-
 
 
 
