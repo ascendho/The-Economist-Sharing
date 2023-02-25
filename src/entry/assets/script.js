@@ -38,13 +38,15 @@ async function initialSetup() {
 function updateUI() {
 
     dataSet.forEach((data, i) => {
-        iconSrc = audio[i] ? '../../../img/play-outline.svg' : '../../img/no-entry.png';
+        // iconSrc = audio[i] ? '../../../img/play-outline.svg' : '../../img/no-entry.png';
+        // const a = audio[i] ? `<a class="audio" href="../player/player.html?name=${names[i]}" target="_blank"> <img class="playerIcon" width="25px" height="25px" src="${iconSrc}" alt="audio"></a>` : `<img class="playerIcon" width="25px" height="25px" src="${iconSrc}" alt="audio">`;
+
+
         html = `<tr>
         <td><a class="displayName" href="../../articles/${names[i]}.pdf" target="_blank">${names[i]}</a></td>
         <td class="theme">${themes[i]}</td>
         <td class="topic">${topics[i]}</td>
-        <td><a class="audio" href="../player/player.html?name=${names[i]}" target="_blank"> <img class="playerIcon" width="25px" height="25px" src="${iconSrc}" alt="audio">
-      </a></td>
+        <td>${audio[i] ? `<a class="audio" href="../player/player.html?name=${names[i]}" target="_blank"> <img class="playerIcon" width="25px" height="25px" src="${audio[i] ? '../../../img/play-outline.svg' : '../../img/no-entry.png'}" alt="audio"></a>` : `<img class="playerIcon" width="25px" height="25px" src="${audio[i] ? '../../../img/play-outline.svg' : '../../img/no-entry.png'}" alt="audio">`}</td>
     </tr>`;
         tbody.insertAdjacentHTML('beforeend', html);
 
