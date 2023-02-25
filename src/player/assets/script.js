@@ -153,12 +153,13 @@ async function accessData() {
         }
     });
     songs = await res.json();
+    console.log(songs);
 }
 
 async function initialSetup() {
     await accessData();
-
     songIndex = songs.findIndex(s => s.name === songName);
+    console.log(songIndex);
     if (songIndex >= 0) {
         loadSong(songs[songIndex]);
         playSong();
