@@ -1,4 +1,25 @@
 'use strict';
+
+const {createClient} = supabase
+const _supabase = createClient('https://ebvvkimmpybapqtxypfm.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVidnZraW1tcHliYXBxdHh5cGZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY3OTQ3MjYsImV4cCI6MTk5MjM3MDcyNn0.LZ87nhdYaIe7xlHJWgcM3-XIcskshwNtIF1ldkYAM_I')
+
+async function loadData() {
+    let query = _supabase.from('Songs').select('*');
+    let {data: Songs, error} = await query.order('id', {ascending: true});
+    return Songs;
+
+}
+
+let dataSet;
+
+async function init() {
+    dataSet = await loadData();
+    console.log(dataSet);
+
+}
+
+// init();
+
 const image = document.querySelector('img');
 const title = document.getElementById('title');
 const artist = document.getElementById('artist');
@@ -17,7 +38,9 @@ const listModal = document.querySelector('.listModal');
 let songs = '';
 const artistVal = 'The Economist';
 
+
 // Check if Playing
+
 let isPlaying = false;
 
 let songName = (new URLSearchParams(location.search)).get('name');
