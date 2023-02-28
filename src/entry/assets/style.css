@@ -99,12 +99,19 @@ a:hover {
     /*filter: drop-shadow(16px 16px 10px green)*/
 }
 
-.arrowBox{
+.noAudio:hover {
+    background-color: #343a40;
+    border-radius: 100%;
+    cursor: not-allowed;
+}
+
+.arrowBox {
     /*display: block;*/
     /*margin: 40px auto 0;*/
     /*text-align: center;*/
 }
-.left{
+
+.left {
     position: relative;
     top: 20px;
     left: 600px;
@@ -112,13 +119,14 @@ a:hover {
 }
 
 
-.right{
+.right {
     position: relative;
 
     top: 20px;
     left: 700px;
 }
-.arrow{
+
+.arrow {
     --color-primary: #5ec576;
     border: none;
     background: rgba(255, 255, 255, 0.7);
@@ -132,11 +140,11 @@ a:hover {
     transform: translate(50%, -50%);
 }
 
-.arrow:hover{
+.arrow:hover {
     cursor: pointer;
 }
 
-.page{
+.page {
     display: inline-block;
     font-family: Serif;
     font-size: 32px;

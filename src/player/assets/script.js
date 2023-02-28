@@ -1,24 +1,8 @@
 'use strict';
 
-const {createClient} = supabase
-const _supabase = createClient('https://ebvvkimmpybapqtxypfm.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVidnZraW1tcHliYXBxdHh5cGZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY3OTQ3MjYsImV4cCI6MTk5MjM3MDcyNn0.LZ87nhdYaIe7xlHJWgcM3-XIcskshwNtIF1ldkYAM_I')
-
-async function loadData() {
-    let query = _supabase.from('Songs').select('*');
-    let {data: Songs, error} = await query.order('id', {ascending: true});
-    return Songs;
-
-}
-
-let dataSet;
-
-async function init() {
-    dataSet = await loadData();
-    console.log(dataSet);
-
-}
-
-// init();
+// supabase client
+const {createClient} = supabase;
+const _supabase = createClient('https://ebvvkimmpybapqtxypfm.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVidnZraW1tcHliYXBxdHh5cGZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY3OTQ3MjYsImV4cCI6MTk5MjM3MDcyNn0.LZ87nhdYaIe7xlHJWgcM3-XIcskshwNtIF1ldkYAM_I');
 
 const image = document.querySelector('img');
 const title = document.getElementById('title');
@@ -38,9 +22,7 @@ const listModal = document.querySelector('.listModal');
 let songs = '';
 const artistVal = 'The Economist';
 
-
 // Check if Playing
-
 let isPlaying = false;
 
 let songName = (new URLSearchParams(location.search)).get('name');
@@ -97,7 +79,6 @@ function calculate(time) {
 
 // Update Progress Bar & Time
 function updateProgressBar(e) {
-    // console.log("invoked!");
     if (isPlaying) {
         const {duration, currentTime} = e.target;
         // Update progress bar width
@@ -167,22 +148,17 @@ function showList() {
 
 }
 
-async function accessData() {
-    const res = await fetch('https://ebvvkimmpybapqtxypfm.supabase.co/rest/v1/Songs', {
-        headers: {
-            apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVidnZraW1tcHliYXBxdHh5cGZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY3OTQ3MjYsImV4cCI6MTk5MjM3MDcyNn0.LZ87nhdYaIe7xlHJWgcM3-XIcskshwNtIF1ldkYAM_I',
-            authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVidnZraW1tcHliYXBxdHh5cGZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY3OTQ3MjYsImV4cCI6MTk5MjM3MDcyNn0.LZ87nhdYaIe7xlHJWgcM3-XIcskshwNtIF1ldkYAM_I',
+async function loadData() {
+    let query = _supabase.from('Songs').select('*');
+    let {data: Songs, error} = await query.order('id', {ascending: true});
+    return Songs;
 
-        }
-    });
-    songs = await res.json();
-    console.log(songs);
 }
 
-async function initialSetup() {
-    await accessData();
+async function init() {
+    songs = await loadData();
     songIndex = songs.findIndex(s => s.name === songName);
-    console.log(songIndex);
+    // console.log(songIndex);
     if (songIndex >= 0) {
         loadSong(songs[songIndex]);
         playSong();
@@ -194,7 +170,7 @@ async function initialSetup() {
     }
 }
 
-initialSetup();
+init();
 
 // Event Listeners
 playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
@@ -247,3 +223,33 @@ progressContainer.addEventListener('click', setProgressBar);
 //         displayName: '20230222',
 //     },
 // ];
+
+
+// async function accessData() {
+//     const res = await fetch('https://ebvvkimmpybapqtxypfm.supabase.co/rest/v1/Songs', {
+//         headers: {
+//             apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVidnZraW1tcHliYXBxdHh5cGZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY3OTQ3MjYsImV4cCI6MTk5MjM3MDcyNn0.LZ87nhdYaIe7xlHJWgcM3-XIcskshwNtIF1ldkYAM_I',
+//             authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVidnZraW1tcHliYXBxdHh5cGZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY3OTQ3MjYsImV4cCI6MTk5MjM3MDcyNn0.LZ87nhdYaIe7xlHJWgcM3-XIcskshwNtIF1ldkYAM_I',
+//
+//         }
+//     });
+//     songs = await res.json();
+//     console.log(songs);
+// }
+
+// async function initialSetup() {
+//     await accessData();
+//     songIndex = songs.findIndex(s => s.name === songName);
+//     // console.log(songIndex);
+//     if (songIndex >= 0) {
+//         loadSong(songs[songIndex]);
+//         playSong();
+//     } else {
+//         songIndex = 0;
+//         loadSong(songs[songIndex]);
+//         currentTimeEl.textContent = '';
+//         durationEl.textContent = '';
+//     }
+// }
+//
+// initialSetup();
