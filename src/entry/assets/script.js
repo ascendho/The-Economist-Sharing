@@ -7,8 +7,11 @@ const supabase = createClient('https://ebvvkimmpybapqtxypfm.supabase.co', 'eyJhb
 // const left = document.querySelector('.left');
 // const right = document.querySelector('.right');
 
+const body = document.querySelector('body');
+const footer = document.querySelector('footer');
 const loader = document.querySelector('.loader');
-console.log(loader.classList);
+const toggleSwitch = document.querySelector('input[type="checkbox"]');
+const toggleIcon = document.getElementById('toggle-icon');
 const tbody = document.querySelector('tbody');
 let themes = [], topics = [], names = [], ids = [], dataSet = [], audio = [], html = '', iconSrc;
 
@@ -37,7 +40,6 @@ function loading(isLoading) {
     isLoading ? loader.classList.remove("hidden") : loader.classList.add("hidden");
 }
 
-
 async function initialSetup() {
     loading(true);
     dataSet = await loadData();
@@ -56,4 +58,42 @@ async function initialSetup() {
 
 }
 
+function darkMode() {
+    body.style.backgroundColor = '#0b7285';
+    toggleIcon.children[0].textContent = 'Dark Mode';
+    toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon');
+    footer.style.color = '#f8f9fa';
+}
+
+function lightMode() {
+    body.style.backgroundColor = '#96f2d7';
+    toggleIcon.children[0].textContent = 'Light Mode';
+    toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
+    footer.style.color = '#38464d';
+}
+
+function switchTheme(event) {
+    if (event.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        darkMode();
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        lightMode();
+    }
+}
+
 initialSetup();
+
+toggleSwitch.addEventListener('change', switchTheme);
+
+// Check Local Storage For Theme
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+        darkMode();
+    }
+}
