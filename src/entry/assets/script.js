@@ -7,6 +7,8 @@ const supabase = createClient('https://ebvvkimmpybapqtxypfm.supabase.co', 'eyJhb
 // const left = document.querySelector('.left');
 // const right = document.querySelector('.right');
 
+const loader = document.querySelector('.loader');
+console.log(loader.classList);
 const tbody = document.querySelector('tbody');
 let themes = [], topics = [], names = [], ids = [], dataSet = [], audio = [], html = '', iconSrc;
 
@@ -14,23 +16,6 @@ async function loadData() {
     let query = supabase.from('articleInfo').select('*');
     let {data: articleInfo, error} = await query.order('id', {ascending: true});
     return articleInfo;
-
-}
-
-async function initialSetup() {
-    dataSet = await loadData();
-    themes = dataSet.map((element) => element.theme);
-    topics = dataSet.map((element) => element.topic);
-    names = dataSet.map((element) => element.displayName);
-    audio = dataSet.map((elment) => elment.audio);
-
-    updateUI();
-
-    // console.log(audio);
-    // console.log('articleInfo:', dataSet);
-    // console.log("themes:", themes);
-    // console.log("topics:", topics);
-    // console.log("names:", names);
 
 }
 
@@ -46,6 +31,29 @@ function updateUI() {
         tbody.insertAdjacentHTML('beforeend', html);
 
     })
+}
+
+function loading(isLoading) {
+    isLoading ? loader.classList.remove("hidden") : loader.classList.add("hidden");
+}
+
+
+async function initialSetup() {
+    loading(true);
+    dataSet = await loadData();
+    themes = dataSet.map((element) => element.theme);
+    topics = dataSet.map((element) => element.topic);
+    names = dataSet.map((element) => element.displayName);
+    audio = dataSet.map((elment) => elment.audio);
+
+    updateUI();
+    loading(false);
+    // console.log(audio);
+    // console.log('articleInfo:', dataSet);
+    // console.log("themes:", themes);
+    // console.log("topics:", topics);
+    // console.log("names:", names);
+
 }
 
 initialSetup();

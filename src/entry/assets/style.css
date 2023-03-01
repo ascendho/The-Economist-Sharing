@@ -24,6 +24,24 @@ body {
     /*justify-content: center;*/
 }
 
+.loader {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+    background-color: white;
+    padding: 6rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    font-family: "Times New Roman", sans-serif;
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
 /*.headline{*/
 /*    display: flex;*/
 /*    text-align: center;*/
@@ -146,7 +164,7 @@ a:hover {
 
 .page {
     display: inline-block;
-    font-family: Serif;
+    font-family: Serif, serif;
     font-size: 32px;
 }
 
