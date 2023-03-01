@@ -133,19 +133,21 @@ h3 {
 
 
 .listModal {
+    text-align: center;
     position: fixed;
-    top: 65%;
-    left: 35%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 100rem;
-    /*background-color: #f3f3f3;*/
-    background-color: #cbd5e1;
+    width: 15%;
+    height: 30%;
+    /*max-width: 80%;*/
+    background-color: #63e6be;
     /*padding: 1.8rem 8rem;*/
     padding: 5px 45px;
     box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
     /*z-index: 1000;*/
     transition: all 0.5s;
-    border-radius: 5%;
+    /*border-radius: 5%;*/
 }
 
 .listset{

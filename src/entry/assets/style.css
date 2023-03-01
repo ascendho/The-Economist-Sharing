@@ -52,6 +52,7 @@ GREY COLOR: #343a40
     right: 5px;
     color: var(--on-background);
     /*letter-spacing: 1px;*/
+    font-family: Comfortaa, sans-serif;
 }
 
 .theme-switch {
