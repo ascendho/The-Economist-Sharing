@@ -43,10 +43,11 @@ function loading(isLoading) {
 async function initialSetup() {
     loading(true);
     dataSet = await loadData();
+    console.log(dataSet);
     themes = dataSet.map((element) => element.theme);
     topics = dataSet.map((element) => element.topic);
     names = dataSet.map((element) => element.displayName);
-    audio = dataSet.map((elment) => elment.audio);
+    audio = dataSet.map((element) => element.audio);
 
     updateUI();
     loading(false);
