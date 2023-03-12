@@ -209,6 +209,7 @@ a:link {
 a:hover {
     text-decoration: underline #2f9e44 5px;
     cursor: pointer;
+    /*background-color: #2f9e44;*/
 }
 
 .playerIcon:hover {
