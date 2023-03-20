@@ -59,8 +59,10 @@ function prevSong() {
     if (songIndex < 0) {
         songIndex = songs.length - 1;
     }
-    loadSong(songs[songIndex]);
-    playSong();
+    window.location=`http://localhost:63342/The-Economist/src/player/player.html?name=${songs[songIndex].displayName}`;
+
+    // loadSong(songs[songIndex]);
+    // playSong();
 }
 
 // Next Song
@@ -69,8 +71,10 @@ function nextSong() {
     if (songIndex > songs.length - 1) {
         songIndex = 0;
     }
-    loadSong(songs[songIndex]);
-    playSong();
+    window.location=`http://localhost:63342/The-Economist/src/player/player.html?name=${songs[songIndex].displayName}`;
+
+    // loadSong(songs[songIndex]);
+    // playSong();
 }
 
 function downLoadSong() {
