@@ -15,6 +15,7 @@ const progressContainer = document.getElementById('progress-container');
 const prevBtn = document.getElementById('prev');
 const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
+const downloadBtn = document.getElementById('download');
 const listBtn = document.getElementById('list');
 let playList = document.querySelectorAll('.listset');
 const listModal = document.querySelector('.listModal');
@@ -70,6 +71,11 @@ function nextSong() {
     }
     loadSong(songs[songIndex]);
     playSong();
+}
+
+function downLoadSong() {
+    window.location = `https://github.com/ascendho/The-Economist-Sharing/raw/master/audios/${songName}.mp3`;
+    // window.location.reload(true);
 }
 
 // calculate time
@@ -176,6 +182,7 @@ init();
 playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
+downloadBtn.addEventListener('click', downLoadSong);
 // listBtn.addEventListener('click', showList);
 music.addEventListener('ended', nextSong);
 music.addEventListener('timeupdate', updateProgressBar);
