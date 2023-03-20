@@ -74,7 +74,9 @@ function nextSong() {
 }
 
 function downLoadSong() {
-    window.location = `https://github.com/ascendho/The-Economist-Sharing/raw/master/audios/${songName}.mp3`;
+    // console.log(songs);
+    // console.log(songs[songIndex]);
+    window.location = `https://github.com/ascendho/The-Economist-Sharing/raw/master/audios/${songs[songIndex].displayName}.mp3`;
     // window.location.reload(true);
 }
 
