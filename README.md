@@ -28,9 +28,18 @@ The idea of this repo is from my long-standing reading habits of <a href="https:
 
 - I build a website using Github pages for this project, You could view <a href="https://2day1.netlify.app/src/entry/entry.html" target="_blank">here</a>
 
-- Preview:![image-20230218151925743](img/image-20230218151925743.png)
+- **Preview**:
 
-  
+- ![image-20230401162132770](img/image-20230401162132770.png)
+
+- ![image-20230218151925743](img/image-20230218151925743.png)
+
+
+- ![image-20230401161814851](img/image-20230401161814851.png)
+
+
+
+
 
 ## Folder clarification
 
